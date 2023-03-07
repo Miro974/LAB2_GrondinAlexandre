@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     {
         //Position initiale du joueur
         transform.position = new Vector3(0f, 0.51f, -45f);
-        //_rb.GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
         float posZ = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(posX, 0f, posZ);
         direction.Normalize();
-        transform.Translate(direction * Time.deltaTime * _vitesse);
-        //_rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
+        //transform.Translate(direction * Time.deltaTime * _vitesse);
+        _rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
     }
 
 }
