@@ -3274,7 +3274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4330578729899007952, guid: 3b3a79ee9ec5cce4c9fee7f85ffdedc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.3
+      value: 16.6
       objectReference: {fileID: 0}
     - target: {fileID: 4330578729899007952, guid: 3b3a79ee9ec5cce4c9fee7f85ffdedc3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3327,6 +3327,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4173897108356261552, guid: 3c25f28fc6e287149b4bcd62364a92ee, type: 3}
       propertyPath: m_Name
+      value: FinNiveau
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173897108356261552, guid: 3c25f28fc6e287149b4bcd62364a92ee, type: 3}
+      propertyPath: m_TagString
       value: FinNiveau
       objectReference: {fileID: 0}
     - target: {fileID: 4173897108356261555, guid: 3c25f28fc6e287149b4bcd62364a92ee, type: 3}
@@ -3560,7 +3564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227396953093759216, guid: b2057527db54a77429aaa214c7b5a127, type: 3}
       propertyPath: _vitesse
-      value: 1000
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2057527db54a77429aaa214c7b5a127, type: 3}
