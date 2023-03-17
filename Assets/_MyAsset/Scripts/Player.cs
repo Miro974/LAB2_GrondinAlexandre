@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Attributs
-    [SerializeField] private float _vitesse = 500f;
+    [SerializeField] private float _vitesse = 700f;
     private Rigidbody _rb;
 
     //Méthodes privées
@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MouvementJoueur();
+        mouvementJoueur();
     }
 
-    private void MouvementJoueur()
+    private void mouvementJoueur()
     {
         float posX = Input.GetAxis("Horizontal");
         float posZ = Input.GetAxis("Vertical");
@@ -30,5 +30,12 @@ public class Player : MonoBehaviour
         //transform.Translate(direction * Time.deltaTime * _vitesse);
         _rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
     }
+
+    //Méthodes publiques
+    public void finJoueur()
+    {
+        gameObject.SetActive(false);
+    }
+
 
 }
