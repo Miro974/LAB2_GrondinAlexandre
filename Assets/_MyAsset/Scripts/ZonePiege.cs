@@ -5,20 +5,34 @@ using UnityEngine;
 public class ZonePiege : MonoBehaviour
 {
     // Attributs
-    [SerializeField] private GameObject _piege = default;
-    private Rigidbody _rb;
+    private bool _actif = false;
+    [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();
+    private List<Rigidbody> _listeRb = new List<Rigidbody>();
+    [SerializeField] private float _intensiteForce = 200;
 
 
     // Méthodes privées
     private void Start()
     {
-        _rb = _piege.GetComponent<Rigidbody>();
-        _rb.useGravity = false;
+        foreach (var piege in _listePieges)
+        {
+            _listeRb.Add(piege.GetComponent<Rigidbody>());
+        }
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        _rb.useGravity = true;
+        if (other.gameObject.tag == "Player" && !_actif)
+        {
+            foreach (var rb in _listeRb)
+            {
+                rb.useGravity = true;
+                Vector3 direction = new Vector3(-1f, -1f, 0f);
+                rb.AddForce(direction * _intensiteForce);
+            }
+
+            _actif = true;
+        }
     }
 
 

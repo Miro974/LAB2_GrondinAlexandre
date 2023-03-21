@@ -50,8 +50,8 @@ public class FinNiveau : MonoBehaviour
                 //Debug.Log((_gestionJeu.GetPointage() - _gestionJeu.GetContactNiv1()).ToString());
                 float tpsTotalNiv2 = tpsNiv2 + contactNiv2;
                 // Temps + pénalités Niveau 3
-                float tpsNiv3 = Time.time - (_gestionJeu.GetTpsNiv1() + tpsNiv2);
-                int contactNiv3 = _gestionJeu.GetPointage() /*- (_gestionJeu.GetContactNiv1() + contactNiv2)*/;
+                float tpsNiv3 = Time.time - (_gestionJeu.GetTpsNiv1() + _gestionJeu.GetTpsNiv2());
+                int contactNiv3 = _gestionJeu.GetPointage() - (_gestionJeu.GetContactNiv1() + _gestionJeu.GetContactNiv2());
                 float tpsTotalNiv3 = tpsNiv3 + contactNiv3;
 
                 // Bilan de fin de partie
@@ -69,7 +69,7 @@ public class FinNiveau : MonoBehaviour
                 Debug.Log("Au niveau 3 vous avez touché : " + contactNiv3.ToString() + " obstacles");
                 Debug.Log("Temps total du niveau 3 : " + tpsTotalNiv3.ToString("f2") + " secondes");
 
-                Debug.Log("Votre temps total pour les trois niveaux est de : " + (tpsTotalNiv1 + tpsTotalNiv2).ToString("f2"));
+                Debug.Log("Votre temps total pour les trois niveaux est de : " + (tpsTotalNiv1 + tpsTotalNiv2 + tpsTotalNiv3).ToString("f2"));
                 _player.finJoueur();
             }
             else
@@ -77,9 +77,9 @@ public class FinNiveau : MonoBehaviour
                 // Charger la scène suivante
                 
                     _gestionJeu.SetNiv1(_gestionJeu.GetPointage(), Time.time);
-                    //Debug.Log(_gestionJeu.GetContactNiv1().ToString());
+                   
                 
-                    _gestionJeu.SetNiv2((_gestionJeu.GetPointage() - _gestionJeu.GetContactNiv1()), (Time.time - _gestionJeu.GetTpsNiv1()));
+                    _gestionJeu.SetNiv2(_gestionJeu.GetContactNiv2(), _gestionJeu.GetTpsNiv2());
 
 
                 SceneManager.LoadScene(numScene + 1);

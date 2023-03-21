@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpnDown : MonoBehaviour
+public class BacknForth : MonoBehaviour
 {
-    [SerializeField] float distance = 9;
-    [SerializeField] float vitesse;
+    [SerializeField] float distance = 17;
+    [SerializeField] float vitesse = 4;
 
     private Vector3 postionDepart;
     private void Start()
@@ -15,13 +15,13 @@ public class UpnDown : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpNDown();
+        BackNForth();
     }
 
-    public void UpNDown()
+    public void BackNForth()
     {
         Vector3 v = postionDepart;
-        v.y += distance * Mathf.Sin(Time.time * vitesse);
+        v.x += distance * Mathf.Sin(Time.time * vitesse);
         transform.position = v;
     }
 }
