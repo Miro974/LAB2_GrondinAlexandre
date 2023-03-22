@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZonePiege : MonoBehaviour
@@ -8,7 +9,7 @@ public class ZonePiege : MonoBehaviour
     private bool _actif = false;
     [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();
     private List<Rigidbody> _listeRb = new List<Rigidbody>();
-    [SerializeField] private float _intensiteForce = 200;
+    [SerializeField] private float _intensiteForce = 300;
 
 
     // Méthodes privées
@@ -26,16 +27,31 @@ public class ZonePiege : MonoBehaviour
         {
             foreach (var rb in _listeRb)
             {
-                rb.useGravity = true;
-                Vector3 direction = new Vector3(-1f, -1f, 0f);
-                rb.AddForce(direction * _intensiteForce);
-            }
+                foreach (var piege in _listePieges)
+                { 
+                    switch (piege.tag)
+                    {
+                        case "PiegeD": Vector3 directionD = new Vector3(-2f, -1f, 0f);
+                                       piege.GetComponent<Rigidbody>().AddForce(directionD * _intensiteForce);
+                                       
+                                       
 
+                        break;
+                        case "PiegeG": Vector3 directionG = new Vector3(2f, -1f, 0f);
+                                       piege.GetComponent<Rigidbody>().AddForce(directionG * _intensiteForce);
+                                       
+                                      
+                        break;
+
+                    }
+                   rb.useGravity = true;
+                }
+            }
             _actif = true;
         }
     }
 
 
-
+    
 
 }
