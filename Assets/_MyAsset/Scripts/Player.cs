@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     }
 
     //Méthodes publiques
-    public void finJoueur()
+    public void finJoueur()     // Fonction qui termine le jeu en faisant disparaître le joueur à la fin du dernier niveau
     {
         gameObject.SetActive(false);
     }

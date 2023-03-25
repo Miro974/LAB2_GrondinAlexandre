@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GestionBarriere : MonoBehaviour
 {
+    // Fonction qui détruit les barrières du troisième niveau
     public void BarriereDestroy()
     { 
         gameObject.SetActive(false);

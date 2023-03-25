@@ -18,7 +18,7 @@ public class GestionJeu : MonoBehaviour
     }
     private void Awake()
     {
-        int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;
+        int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;  // Fonctionne qui détermine si l'on garde ou non les inforamtions d'une scène
         if (nbGestionJeu > 1)
         {
             Destroy(gameObject);
@@ -37,6 +37,8 @@ public class GestionJeu : MonoBehaviour
     }
 
     // Méthodes publiques
+
+    // Fonctions pour récupérer divers informations liées à chacun des niveaux
     public void AugmenterPointage()
     {
         _pointage++;

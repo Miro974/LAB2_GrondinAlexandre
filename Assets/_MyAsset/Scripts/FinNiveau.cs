@@ -40,14 +40,12 @@ public class FinNiveau : MonoBehaviour
             {
                 int contacts = _gestionJeu.GetPointage();
                 // Temps + pénalités Niveau 1
-                //float tpsNiv1 = Time.time - _gestionJeu.GetTpsNiv1();
+
                 float tpsTotalNiv1 = _gestionJeu.GetTpsNiv1() + _gestionJeu.GetContactNiv1();
                 // Temps + pénalités Niveau 2
                 float tpsNiv2 = Time.time - _gestionJeu.GetTpsNiv1();
                 int contactNiv2 = _gestionJeu.GetPointage() - _gestionJeu.GetContactNiv1();
-                //Debug.Log(_gestionJeu.GetPointage().ToString());
-                //Debug.Log(_gestionJeu.GetContactNiv1().ToString());
-                //Debug.Log((_gestionJeu.GetPointage() - _gestionJeu.GetContactNiv1()).ToString());
+
                 float tpsTotalNiv2 = tpsNiv2 + contactNiv2;
                 // Temps + pénalités Niveau 3
                 float tpsNiv3 = Time.time - (_gestionJeu.GetTpsNiv1() + _gestionJeu.GetTpsNiv2());

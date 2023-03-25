@@ -14,6 +14,8 @@ public class GestionCollision : MonoBehaviour
         _gestionJeu = FindObjectOfType<GestionJeu>();
         _touche = false;
     }
+
+    // Fonctionne qui change la couleur des obstacles et augmeente le pointage lors düne collision
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")

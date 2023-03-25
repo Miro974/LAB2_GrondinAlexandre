@@ -15,6 +15,7 @@ public class ZonePiege : MonoBehaviour
     // Méthodes privées
     private void Start()
     {
+        // Récupérer tous Rigidbody des pièges de la liste
         foreach (var piege in _listePieges)
         {
             _listeRb.Add(piege.GetComponent<Rigidbody>());
@@ -23,13 +24,13 @@ public class ZonePiege : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !_actif)
+        if (other.gameObject.tag == "Player" && !_actif)   // condition de déclenchement de la collision
         {
             foreach (var rb in _listeRb)
             {
                 foreach (var piege in _listePieges)
                 { 
-                    switch (piege.tag)
+                    switch (piege.tag)      // Selon le tag de l'objet concerné par la zone de piège, la direction de sa chute va varier
                     {
                         case "PiegeD": Vector3 directionD = new Vector3(-2f, -1f, 0f);
                                        piege.GetComponent<Rigidbody>().AddForce(directionD * _intensiteForce);
@@ -55,7 +56,7 @@ public class ZonePiege : MonoBehaviour
                         break;
 
                     }
-                   rb.useGravity = true;
+                   rb.useGravity = true;    // La gravité est enclenchée sur les RigidBody et par extension, leur chute
                 }
             }
             _actif = true;

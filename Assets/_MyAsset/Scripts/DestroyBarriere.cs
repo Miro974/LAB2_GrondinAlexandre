@@ -9,7 +9,7 @@ public class DestroyBarriere : MonoBehaviour
 
     //Méthodes privées
 
-
+    // Fonction qui déclenche la destruction des barrières du troisième niveau si les objectifs sont touchés par le joueur
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
