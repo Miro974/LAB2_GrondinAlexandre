@@ -6,7 +6,7 @@ using UnityEngine;
 public class Rotation : MonoBehaviour
 {
     // Attributs
-    [SerializeField] private float _vitesseRotaY = 0.5f;
+    [SerializeField] private float _vitesseRotaY = 1f;
 
     // Méthodes privées 
     private void Update()

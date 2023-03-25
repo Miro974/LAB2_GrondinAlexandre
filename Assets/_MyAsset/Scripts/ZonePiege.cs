@@ -42,6 +42,17 @@ public class ZonePiege : MonoBehaviour
                                        
                                       
                         break;
+                        case "SphereG": _intensiteForce = 500;
+                                        Vector3 directionSG = new Vector3(0.5f, -1f, 0f);
+                                        piege.GetComponent<Rigidbody>().AddForce(directionSG * _intensiteForce);
+                            
+                        break;
+                        case "SphereD": _intensiteForce = 500;
+                                        Vector3 directionSD = new Vector3(-0.5f, -1f, 0f);
+                                        piege.GetComponent<Rigidbody>().AddForce(directionSD * _intensiteForce);
+                            
+
+                        break;
 
                     }
                    rb.useGravity = true;

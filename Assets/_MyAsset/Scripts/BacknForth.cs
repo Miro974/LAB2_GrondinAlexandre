@@ -8,6 +8,7 @@ public class BacknForth : MonoBehaviour
     [SerializeField] float vitesse = 4;
 
     private Vector3 postionDepart;
+
     private void Start()
     {
         postionDepart = transform.position;
@@ -17,7 +18,6 @@ public class BacknForth : MonoBehaviour
     {
         BackNForth();
     }
-
     public void BackNForth()
     {
         Vector3 v = postionDepart;

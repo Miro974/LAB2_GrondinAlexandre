@@ -7,6 +7,10 @@ TagManager:
   - FinNiveau
   - PiegeD
   - PiegeG
+  - SphereD
+  - SphereG
+  - BarriereG
+  - BarriereD
   layers:
   - Default
   - TransparentFX
